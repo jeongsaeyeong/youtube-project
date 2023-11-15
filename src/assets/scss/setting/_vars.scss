@@ -1,0 +1,45 @@
+:root {
+    --mainfont-nanum: "Hahmlet";
+    --mainfont-suite: "suite";
+    --mainfont-revecca: "revecca";
+    --mainfont-pyeongChang: "pyeongChang";
+
+    // 메인 컬러 
+
+    --maincolor01: #4E849C;
+    --maincolor02: #000;
+
+    --maincolor03: #4E849C;
+    --maincolor03-100: #4E849C;
+
+    --maincolor04: #eeedea;
+    --maincolor04-100: #1e262e;
+
+    --black: #000;
+    --black100: #292929;
+    --black200: #474747;
+    --black300: #727272;
+    --black400: #aaaaaa;
+    --black500: #d3d3d3;
+
+    --white: #fff;
+    --white100: #ececec;
+
+    // 폰트 셋팅
+    font-family: var(--mainfont-nanum), var(--mainfont-revecca);
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+
+    // 폰트 최적화
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+    @media (max-width: 800px) {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}

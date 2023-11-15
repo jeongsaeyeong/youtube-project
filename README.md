@@ -1,21 +1,45 @@
 # 나만의 음악 유튜브 사이트 만들기
-- 유튜브 API를 이용해 음악을 들을 수 있는 사이트를 만들겠습니다.
-평소 가사 있는 노래보다도 가사 없는 음악을 즐겨 이러한 사이트를 만들어보았습니다.
+- 유튜브 API를 이용해 음악을 들을 수 있는 사이트를 만들어본다.
+평소 가사 있는 노래보다도 가사 없는 음악을 즐겨 이러한 사이트를 만들어보았다.
 - I will make a site where I can listen to music using YouTube API.
 I made these sites by enjoying music without lyrics rather than songs with lyrics.
 
 ## 설치
 `npm install react-router-dom axios react-icon react-player sass react-helmet-async swiper`
 
-- `axios`: HTTP 요청을 쉽게 만들고 처리하는 JavaScript 라이브러리로, 브라우저 및 Node.js에서 동작합니다.
-- `react` : Facebook에서 제작한 사용자 인터페이스를 구축하기 위한 선언적이고 효율적인 JavaScript 라이브러리로, 단일 페이지 애플리케이션 개발에 주로 사용됩니다.
-- `react-dom`: React 애플리케이션에서 가상 DOM을 실제 DOM에 렌더링하는 데 사용되는 라이브러리로, 웹 애플리케이션의 UI를 브라우저에 표시합니다.
-- `react-helmet-async`: React 애플리케이션에서 헤드 태그의 메타데이터를 동적으로 변경할 수 있게 하는 라이브러리로, SEO 및 웹페이지 공유에 유용합니다.
-- `react-icon`: 다양한 아이콘을 React 애플리케이션에 쉽게 통합할 수 있게 해주는 라이브러리로, 다양한 아이콘 라이브러리를 지원합니다.
-- `react-player`: 동영상 및 음악 파일을 재생하기 위한 간단한 React 컴포넌트를 제공하는 라이브러리로, 다양한 미디어 소스를 지원합니다.
-- `react-router-dom`: React 애플리케이션에서 라우팅을 관리하기 위한 라이브러리로, 다양한 라우팅 및 내비게이션 기능을 제공합니다.
-- `react-scripts`: Create React App에서 사용되는 스크립트 및 설정을 포함하는 패키지로, React 애플리케이션을 쉽게 시작하고 관리할 수 있도록 도와줍니다.
-- `sass`: CSS의 확장인 SCSS 문법을 지원하는 스타일 시트 언어로, 변수, 중첩, 믹스인 등을 활용하여 스타일을 구조화하고 재사용성을 높일 수 있습니다.
-- `swiper`: 모바일 및 데스크톱에서 동작하는 터치 슬라이드 라이브러리로, 이미지 갤러리, 배너 및 콘텐츠 슬라이드 쇼 등을 만들 수 있습니다.
+- `axios`: HTTP 요청을 쉽게 만들고 처리하는 JavaScript 라이브러리로, 브라우저 및 Node.js에서 동작한다..
+- `react` : Facebook에서 제작한 사용자 인터페이스를 구축하기 위한 선언적이고 효율적인 JavaScript 라이브러리로, 단일 페이지 애플리케이션 개발에 주로 사용된다..
+- `react-dom`: React 애플리케이션에서 가상 DOM을 실제 DOM에 렌더링하는 데 사용되는 라이브러리로, 웹 애플리케이션의 UI를 브라우저에 표시한다.
+- `react-helmet-async`: React 애플리케이션에서 헤드 태그의 메타데이터를 동적으로 변경할 수 있게 하는 라이브러리로, SEO 및 웹페이지 공유에 유용한다.
+- `react-icon`: 다양한 아이콘을 React 애플리케이션에 쉽게 통합할 수 있게 해주는 라이브러리로, 다양한 아이콘 라이브러리를 지원한다.
+- `react-player`: 동영상 및 음악 파일을 재생하기 위한 간단한 React 컴포넌트를 제공하는 라이브러리로, 다양한 미디어 소스를 지원한다.
+- `react-router-dom`: React 애플리케이션에서 라우팅을 관리하기 위한 라이브러리로, 다양한 라우팅 및 내비게이션 기능을 제공한다.
+- `react-scripts`: Create React App에서 사용되는 스크립트 및 설정을 포함하는 패키지로, React 애플리케이션을 쉽게 시작하고 관리할 수 있도록 도와준다.
+- `sass`: CSS의 확장인 SCSS 문법을 지원하는 스타일 시트 언어로, 변수, 중첩, 믹스인 등을 활용하여 스타일을 구조화하고 재사용성을 높일 수 있다.
+- `swiper`: 모바일 및 데스크톱에서 동작하는 터치 슬라이드 라이브러리로, 이미지 갤러리, 배너 및 콘텐츠 슬라이드 쇼 등을 만들 수 있다.
 
-### 
+### .env 파일
+- 유튜브 API 키는 노출되면 안 되기 때문에 .환경변수로 저장해둔다.
+
+### useParams
+
+- useParams는 React Router 라이브러리에서 제공되는 훅 중 하나로, 라우트 매개변수(route parameters)를 가져오기 위해 사용한다. 라우트 매개변수는 동적으로 변하는 부분적인 URL 세그먼트를 나타내며, 주로 경로의 일부를 동적으로 처리해야 할 때 쓴다.
+
+-  useParams를 사용하는 경우는 아래와 같다.
+1) 동적인 URL을 가진 라우트
+2) 라우트의 ID나 식별자 처리
+
+### useState 
+
+- const { videos, setVideos } = useState([]);
+- 돔 구조를 가지기 때문에 이런 형태를 사용한다.
+
+### postman
+
+- Postman은 API 개발을 보다 쉽게 만들어주는 협업 도구 및 개발 환경입니다. Postman은 다양한 API 테스트 및 개발 작업을 지원하며, 주로 다음과 같은 기능을 제공합니다:
+
+1) API 테스트
+2) API 개발 및 디자인
+3) 환경 변수 및 데이터 저장
+4) 콜렉션
+5) 자동화 및 테스트 스크립트
