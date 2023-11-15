@@ -36,10 +36,15 @@ I made these sites by enjoying music without lyrics rather than songs with lyric
 
 ### postman
 
-- Postman은 API 개발을 보다 쉽게 만들어주는 협업 도구 및 개발 환경입니다. Postman은 다양한 API 테스트 및 개발 작업을 지원하며, 주로 다음과 같은 기능을 제공합니다:
+- Postman은 API 개발을 보다 쉽게 만들어주는 협업 도구 및 개발 환경. Postman은 다양한 API 테스트 및 개발 작업을 지원하며, 주로 다음과 같은 기능을 제공한다.
 
 1) API 테스트
 2) API 개발 및 디자인
 3) 환경 변수 및 데이터 저장
 4) 콜렉션
 5) 자동화 및 테스트 스크립트
+
+
+### api.js
+
+- 매 페이지마자 youtube api를 가져오는 코드를 작성하는 건 상당히 비효율적인 일이다. 
