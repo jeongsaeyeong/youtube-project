@@ -7,8 +7,8 @@ I made these sites by enjoying music without lyrics rather than songs with lyric
 ## 설치
 `npm install react-router-dom axios react-icon react-player sass react-helmet-async swiper`
 
-- `axios`: HTTP 요청을 쉽게 만들고 처리하는 JavaScript 라이브러리로, 브라우저 및 Node.js에서 동작한다..
-- `react` : Facebook에서 제작한 사용자 인터페이스를 구축하기 위한 선언적이고 효율적인 JavaScript 라이브러리로, 단일 페이지 애플리케이션 개발에 주로 사용된다..
+- `axios`: HTTP 요청을 쉽게 만들고 처리하는 JavaScript 라이브러리로, 브라우저 및 Node.js에서 동작한다.
+- `react` : Facebook에서 제작한 사용자 인터페이스를 구축하기 위한 선언적이고 효율적인 JavaScript 라이브러리로, 단일 페이지 애플리케이션 개발에 주로 사용된다.
 - `react-dom`: React 애플리케이션에서 가상 DOM을 실제 DOM에 렌더링하는 데 사용되는 라이브러리로, 웹 애플리케이션의 UI를 브라우저에 표시한다.
 - `react-helmet-async`: React 애플리케이션에서 헤드 태그의 메타데이터를 동적으로 변경할 수 있게 하는 라이브러리로, SEO 및 웹페이지 공유에 유용한다.
 - `react-icon`: 다양한 아이콘을 React 애플리케이션에 쉽게 통합할 수 있게 해주는 라이브러리로, 다양한 아이콘 라이브러리를 지원한다.
@@ -47,4 +47,4 @@ I made these sites by enjoying music without lyrics rather than songs with lyric
 
 ### api.js
 
-- 매 페이지마자 youtube api를 가져오는 코드를 작성하는 건 상당히 비효율적인 일이다. 
+- 매 페이지마자 youtube api를 가져오는 코드를 작성하는 건 상당히 비효율적인 일이다. 때문에 계속해서 사용할 수 있도록 따로 처리해두었다.
