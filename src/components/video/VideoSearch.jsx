@@ -9,7 +9,7 @@ const formatDate = (dateString) => {
     return `${year}-${month}-${day}`;
 }
 
-const VideoSearch = ({ videos }) => {
+const VideoSearch = ({ videos, channelId }) => {
     return (
         <>
             {videos && videos.length > 0 ? (
@@ -29,7 +29,7 @@ const VideoSearch = ({ videos }) => {
                             <p className='desc'>
                                 {video.snippet.description}
                             </p>
-                            <div className='info'>
+                            <div className='info' style={{ display: channelId ? 'none' : '' }}>
                                 <Link to={`/channel/${video.snippet.channelId}`} className='author'>{video.snippet.channelTitle}</Link>
                                 <span className='date'>{formatDate(video.snippet.publishedAt)}</span>
                             </div>

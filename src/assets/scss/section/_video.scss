@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: repeat(4, 24%);
     justify-content: space-between;
+    min-height: 100vh;
 
     .video {
         margin-bottom: 50px;
@@ -81,7 +82,6 @@
 
     .video__play {
         width: 100%;
-        padding-bottom: 56.25%;
         position: relative;
     }
 
@@ -90,6 +90,7 @@
         .video__title {
             font-family: var(--mainfont-revecca);
             padding: 20px 0 10px 0;
+            font-size: 30px;
             border-bottom: 1px solid var(--maincolor01);
         }
 
@@ -102,6 +103,7 @@
         h2 {
             font-weight: 300;
             margin-bottom: 10px;
+            font-size: 25px;
         }
 
         p {
@@ -114,40 +116,72 @@
         margin-top: 10px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        margin-bottom: 40px;
+        justify-content: right;
 
         .id {
             width: 100%;
             font-weight: 800;
             margin-bottom: 30px;
+            font-size: 20px;
 
             a {
                 border: 1px solid #000;
             }
         }
 
-        .desc {
+        .video__desc {
             width: 100%;
             margin-bottom: 20px;
-            white-space: pre-line;
+            white-space: pre-wrap;
         }
 
         .count {
             margin-top: 30px;
-            width: 100%;
             text-align: right;
+            display: flex;
+            align-items: center;
 
             .view,
             .like,
             .comment {
-                padding: 1rem 1.2rem 0.8rem;
-                border: 1px solid var(--maincolor01);
+                text-align: center;
+                padding: 1rem 1.2rem;
+                background-color: var(--maincolor01);
+                color: var(--maincolor04);
                 margin-right: 10px;
-                border-radius: 30px;
-                position: relative;
-
+                border-radius: 5px;
             }
         }
+    }
+}
+
+@media (max-width:1200px) {
+    .video__inner {
+        grid-template-columns: repeat(3, 32%);
+    }
+}
+
+@media (max-width:1000px) {
+    .video__inner {
+        grid-template-columns: repeat(2, 48%);
+    }
+}
+
+@media (max-width:800px) {
+    .video__inner {
+        grid-template-columns: repeat(3, 32%);
+    }
+}
+
+@media (max-width:600px) {
+    .video__inner {
+        grid-template-columns: repeat(2, 48%);
+    }
+}
+
+@media (max-width:400px) {
+    .video__inner {
+        justify-content: center;
+        grid-template-columns: repeat(1, 98%);
     }
 }
