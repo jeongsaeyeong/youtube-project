@@ -48,3 +48,4 @@ I made these sites by enjoying music without lyrics rather than songs with lyric
 ### api.js
 
 - 매 페이지마자 youtube api를 가져오는 코드를 작성하는 건 상당히 비효율적인 일이다. 때문에 계속해서 사용할 수 있도록 따로 처리해두었다.
+aaagi
