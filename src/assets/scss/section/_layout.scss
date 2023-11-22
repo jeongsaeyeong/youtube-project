@@ -6,6 +6,7 @@
     height: 100%;
     z-index: 1000;
     background-color: var(--maincolor03);
+    background-color: var(--maincolor01);
 }
 
 #main {
@@ -39,6 +40,40 @@
 @media (max-width:800px) {
     #header {
         left: -260px;
+
+        .header__logo {
+            position: fixed;
+            left: 0;
+
+            em {
+                background-color: var(--maincolor03);
+            }
+
+            a {
+                span {
+                    color: var(--maincolor03);
+                }
+
+                animation: none;
+            }
+        }
+
+        .header__menu {
+            position: fixed;
+            background-color: var(--maincolor03);
+
+            &.show {
+                left: 280px;
+            }
+        }
+    }
+
+    #search {
+        justify-content: right;
+
+        .search__inner {
+            width: 65%;
+        }
     }
 
     #main {

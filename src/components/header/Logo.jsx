@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Logo = () => {
     return (
         <h1 className='header__logo'>
-            <Link to='/'>
+            <Link to='#'>
                 <em><RiFileMusicLine /></em>
                 <span>Silence<br />Youtube</span>
             </Link>

@@ -9,10 +9,13 @@ const Search = () => {
     const { searchId } = useParams();
     const [videos, setVideos] = useState([]);
     const [nextPageToken, setNextPageToken] = useState(null);
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         setVideos([]);
         fetchVideos(searchId);
+        setLoading(true);
     }, [searchId]);
 
     const fetchVideos = (query, pageToken = '') => {
@@ -21,11 +24,15 @@ const Search = () => {
                 setNextPageToken(data.nextPageToken);
                 setVideos((prevVideos) => [...prevVideos, ...data.items])
                 console.log(data)
+                setLoading(false);
             })
             .catch((error) => {
                 console.log("Error fetching data", error);
+                setLoading(false);
             })
     }
+
+    const channelPageclass = loading ? 'isLoading' : 'isLoaded';
 
     const handleLoadMore = () => {
         if (nextPageToken) {
@@ -41,7 +48,7 @@ const Search = () => {
             <section id='searchPage'>
                 <h2>{searchId}검색 결과입니다.</h2>
 
-                <div className='video__inner'>
+                <div className={`video__inner ${channelPageclass}`}>
                     <VideoSearch videos={videos} />
                 </div>
 

@@ -4,17 +4,24 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    height: 100%;
     margin-bottom: 50px;
     position: relative;
 
     .today__thubm {
         width: 40%;
-        font-weight: 100;
-        background: var(--maincolor01);
-        background-image: url(https://i.ytimg.com/vi/cCI8HZceNMI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDgzKnYrSLRbw2cFqsvtO2otUXKcQ);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: contain;
+
+        a {
+            display: block;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            padding-bottom: 56.25%;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid var(--maincolor01);
+            margin-bottom: 20px;
+        }
     }
 
     .today__text {

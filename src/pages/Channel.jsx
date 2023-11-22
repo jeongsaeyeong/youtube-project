@@ -9,7 +9,7 @@ const Channel = () => {
     const [channelDetail, setChannelDetail] = useState();
     const [channelVideo, setChannelVideo] = useState([]);
     const [nextPageToken, setNextPageToken] = useState(null);
-    // const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchResults = async () => {
@@ -22,6 +22,8 @@ const Channel = () => {
                 setNextPageToken(videoData.nextPageToken);
             } catch (error) {
                 console.log("Erorr ->", error)
+            } finally {
+                setLoading(false);
             }
         }
         fetchResults();
@@ -35,13 +37,15 @@ const Channel = () => {
         }
     }
 
+    const channelPageclass = loading ? 'isLoading' : 'isLoaded';
+
     return (
         <Main
             title='음악 유튜버 채널'
             description='음악 유튜버 채널 페이지입니다. 채널의 영상을 모두 확인할 수 있습니다.'
         >
 
-            <section id='channelPage'>
+            <section id='channelPage' className={channelPageclass}>
                 {channelDetail && (
                     <div className="channel__inner">
                         <div className='channel__header' style={{ backgroundImage: channelDetail ? `url(${channelDetail.brandingSettings.image.bannerExternalUrl})` : 'none' }}>
