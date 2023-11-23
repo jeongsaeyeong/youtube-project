@@ -45,6 +45,7 @@
             position: fixed;
             left: 0;
             background-color: var(--maincolor04);
+            transition: all 0.6s;
 
             em {
                 background-color: var(--maincolor03);
@@ -58,14 +59,27 @@
                 animation: none;
             }
         }
+    }
 
-        .header__menu {
-            position: fixed;
+    #header.show {
+        left: 0;
+        background-color: var(--maincolor03);
+        transition: all 0.6s;
+
+        .header__logo {
             background-color: var(--maincolor03);
 
-            &.show {
-                left: 280px;
+            a {
+                span {
+                    color: var(--maincolor04);
+                }
+
+                animation: none;
             }
+        }
+
+        .header__menu {
+            padding-top: 110px;
         }
     }
 

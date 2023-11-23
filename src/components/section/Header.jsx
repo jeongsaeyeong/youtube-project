@@ -1,30 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import Logo from '../header/Logo'
 import Menu from '../header/Menu'
 import Sns from '../header/Sns'
 
 const Header = () => {
 
-    useEffect(() => {
-        const Showmenu = () => {
-            const headerlogo = document.querySelector(".header__logo");
-            const headerMenu = document.getElementById("header");
+    const [isMenuActive, setIsMenuActive] = useState(false);
 
-            console.log(headerMenu);
-
-            if (headerlogo && headerMenu) {
-                headerlogo.addEventListener("click", () => {
-                    headerMenu.classList.toggle("show");
-                });
-            }
-        }
-
-        Showmenu();
-    }, []);
+    const toggleMenu = (e) => {
+        e.preventDefault();
+        setIsMenuActive(!isMenuActive);
+    }
 
     return (
-        <header id='header' role='banner' className='header'>
-            <Logo />
+        <header id='header' className={isMenuActive ? 'show' : ''} role='banner'>
+            <Logo toggleMenu={toggleMenu} />
             <Menu />
             <Sns />
         </header>
