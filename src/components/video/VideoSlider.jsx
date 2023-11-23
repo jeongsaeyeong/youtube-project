@@ -13,7 +13,7 @@ const Youtuber = ({ name, videos, title }) => {
             <h2>{title}</h2>
             <div className="channelvideo__inner">
                 <Swiper
-                    spaceBetween={20}
+                    spaceBetween={10}
                     centeredSlides={true}
                     autoplay={{
                         delay: 2500,
@@ -31,9 +31,6 @@ const Youtuber = ({ name, videos, title }) => {
                         },
                         1200: {
                             slidesPerView: 6,
-                        },
-                        1400: {
-                            slidesPerView: 7,
                         }
                     }}
                     navigation={true}

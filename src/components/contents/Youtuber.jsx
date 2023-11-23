@@ -14,7 +14,7 @@ const Youtuber = () => {
             <h2>음악 유튜버 모음</h2>
             <div className="youtuber__inner">
                 <Swiper
-                    spaceBetween={30}
+                    spaceBetween={10}
                     centeredSlides={true}
                     autoplay={{
                         delay: 2500,
@@ -32,13 +32,7 @@ const Youtuber = () => {
                         },
                         1200: {
                             slidesPerView: 6,
-                        },
-                        1400: {
-                            slidesPerView: 7,
-                        },
-                        1600: {
-                            slidesPerView: 8,
-                        },
+                        }
                     }}
                     navigation={true}
                     modules={[Autoplay, Navigation]}

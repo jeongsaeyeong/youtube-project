@@ -21,7 +21,7 @@ const Today = () => {
     useEffect(() => {
         const fetchResults = async () => {
             try {
-                const data = await fetchFromAPI(`search?channelId=${channelId01}&part=snippet&order=date&maxResults=5&pageToken=${pageToken}`);
+                const data = await fetchFromAPI(`search?channelId=${channelId01}&part=snippet&order=date&maxResults=5`);
                 setVideos(prevVideos => [...prevVideos, ...data.items]);
                 setPageToken(data.nextPageToken || '');
             } catch (error) {
@@ -29,7 +29,7 @@ const Today = () => {
             }
         }
         fetchResults();
-    }, [channelId01, pageToken]);
+    }, [channelId01]);
 
     return (
         <Main

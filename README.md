@@ -48,4 +48,40 @@ I made these sites by enjoying music without lyrics rather than songs with lyric
 ### api.js
 
 - 매 페이지마자 youtube api를 가져오는 코드를 작성하는 건 상당히 비효율적인 일이다. 때문에 계속해서 사용할 수 있도록 따로 처리해두었다.
-aaagi
+
+## 겪었던 어려움
+
+### Loading 사용
+#### Loading의 사용 목적 
+- 기본적으로 api는 데이터를 요청하여 가져온다. 즉, 내가 가지고 있는 데이터가 아니기 때문에 받아오는 과정에서 시간이 걸린다. 때문에 데이터를 받아오기 전까지 대기하는 시간이 필요했고, 그것을 위해 Loading을 사용하기로 했다. 
+
+#### Loading 사용 방법
+자세한 코드는 src>page>Search.jsx에 존재한다. 
+
+1) Loading은 useState를 사용하여 true로 값을 설정한다. 데이터를 받아오는 중이거나(true) 받아오는 게 끝났거나(false) 둘 중 하나이기 때문에 boolean을 사용한다. 
+2) fetchFromAPI를 통해 데이터를 다 받아온 후, Loading의 값을 false로 바꿔준다. 데이터가 전부 들어왔으며 로딩이 끝났음을 의미한다.
+3) 가상 돔 구성이므로 채널Id가 바뀔 때마다 Loading의 값을 true로 변경시켜준다.
+4) try와 then을 사용하는 것에 따라 그 형태가 달라지므로 주의해서 사용해야 한다.
+
+#### 어려웠던 점
+
+- Search.jsx .then 방식으로 변경하는 것.
+> Search 페이지는 하나의 페이지에서 내용만 바뀌는 전형적인 가상 돔의 구조를 취하고 있다. 그래서 채널 아이디가 바뀔 때마다 그것을 인식하여 loading의 값을 true로 변경시켜줘야 한다. 이 과정에서 loading의 값을 확인하고 onClick할 때 바뀌게 하는 등 새롭게 들어가야하는 부분이 많았다.
+
+### nextpage 만들기
+#### nextpage 구현 이유 
+- api에서 영상을 가져올 때 max-results를 48개로 지정해뒀다. 하지만 영상 결과는 48개 이상이기 때문에 더보기 버튼을 만들어 매 페이지마다 48개씩 영상을 불러오도록 작업해야 했다.
+
+#### nextpage 구현 방법
+자세한 코드는 src>page>Search.jsx에 존재한다. 
+
+1) nextpageToken은 useState를 사용하되, 처음에는 null로 값을 잡아준다.
+2) 영상을 받아오는 과정에서 query(searchId)와 pageToken을 받아온다. 각각 q(검색어) pageToken에 들어갈 수 있도록 작업한다.
+3) 그리고 setNextPageToken에 data 속 nextPageToken을 넣어준다. setVideos에는 preVideos(이전 비디오)와 전체 데이터를 모두 불러올 수 있도록 배열로 저장한다.
+
+#### 어려웠던 점
+- nextPageToken은 어디서 오는가에 대한 풀리지 않는 의문
+
+### Home에서 video 슬라이드 만들기
+#### video 슬라이드 만들기
+- 특정 인물에 대한 비디오를 가져올 수 있도록 만들었다. 
