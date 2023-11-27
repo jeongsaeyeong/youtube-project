@@ -84,4 +84,4 @@ I made these sites by enjoying music without lyrics rather than songs with lyric
 
 ### Home에서 video 슬라이드 만들기
 #### video 슬라이드 만들기
-- 특정 인물에 대한 비디오를 가져올 수 있도록 만들었다. 
+- 특정 인물에 대한 비디오를 가져올 수 있도d록 만들었다. 
