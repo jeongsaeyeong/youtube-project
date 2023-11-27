@@ -1,27 +1,94 @@
-#searchPage h2 {
-    font-family: 'revecca';
-    margin-bottom: 10px;
+#searchPage {
+    margin: 0 auto;
+
+    h2 {
+        margin: 10px 0;
+        font-family: 'revecca';
+    }
+}
+
+#search {
+    display: flex;
+    border-bottom: 1px solid var(--maincolor01);
+    padding: 10px 0;
 }
 
 .search__inner {
     width: 100%;
-    padding: 17px 40px;
+    padding: 17px 40px 17px 30px;
+    display: flex;
+    align-items: center;
 
     label {
         display: none;
     }
 
     .search__input {
-        margin-top: 15px;
         width: 100%;
         background-color: var(--maincolor03-100);
         border: 1px solid var(--maincolor03-100);
         padding: 15px 30px;
         border-radius: 5px;
         color: #fff;
+        outline: none;
     }
 
     .search__input::placeholder {
-        color: var(--maincolor01); /* 원하는 색상으로 변경 */
-      }
+        color: var(--maincolor01);
+        /* 원하는 색상으로 변경 */
+    }
 }
+
+// .mobile__menu {
+//     padding: 17px 0px 17px 30px;
+//     display: flex;
+//     align-items: center;
+
+//     div {
+//         cursor: pointer;
+//         justify-content: center;
+//         width: 50px;
+//         height: 50px;
+//         border: 2px solid var(--maincolor01);
+//         border-radius: 10px;
+//         position: relative;
+//         display: none;
+
+//         span {
+//             width: 30px;
+//             height: 3px;
+//             background-color: var(--maincolor01);
+//             border-radius: 3px;
+//             position: absolute;
+//             top: 50%;
+//             transform: translateY(-50%);
+//         }
+
+//         span::before,
+//         span::after {
+//             content: '';
+//             position: absolute;
+//             width: 30px;
+//             height: 3px;
+//             border-radius: 3px;
+//             background-color: var(--maincolor01);
+//         }
+
+//         span::before {
+//             top: -8px;
+//         }
+
+//         span::after {
+//             top: 8px;
+//         }
+//     }
+
+// }
+
+// @media (max-width: 800px) {
+//     .mobile__menu {
+//         div {
+//             display: flex;
+//         }
+//     }
+// }

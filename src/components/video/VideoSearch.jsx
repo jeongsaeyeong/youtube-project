@@ -9,32 +9,36 @@ const formatDate = (dateString) => {
     return `${year}-${month}-${day}`;
 }
 
-const VideoSearch = ({ videos }) => {
+const VideoSearch = ({ videos, channelId }) => {
     return (
         <>
-            {videos.map((video, key) => (
-                <div className='video' key={key}>
-                    <div className='video__thumb play__icon'>
-                        <Link
-                            to={`/video/${video.id.videoId}`}
-                            style={{ backgroundImage: `url(${video.snippet.thumbnails.high.url})` }}
-                        >
-                        </Link>
+            {videos && videos.length > 0 ? (
+                videos.map((video, key) => (
+                    <div className='video' key={key}>
+                        <div className="video__thumb play__icon">
+                            <Link
+                                to={`/video/${video.id.videoId}`}
+                                style={{ backgroundImage: `url(${video.snippet.thumbnails.high.url})` }}
+                            >
+                            </Link>
+                        </div>
+                        <div className="video__info">
+                            <h3 className='title'>
+                                <Link to={`/video/${video.id.videoId}`}>{video.snippet.title}</Link>
+                            </h3>
+                            <p className='desc'>
+                                {video.snippet.description}
+                            </p>
+                            <div className='info' style={{ display: channelId ? 'none' : '' }}>
+                                <Link to={`/channel/${video.snippet.channelId}`} className='author'>{video.snippet.channelTitle}</Link>
+                                <span className='date'>{formatDate(video.snippet.publishedAt)}</span>
+                            </div>
+                        </div>
                     </div>
-                    <div className='video__info'>
-                        <div className='title'>
-                            <Link to={`/video/${video.id.videoId}`}>{video.snippet.title}</Link>
-                        </div>
-                        <div className="desc">
-                            {video.snippet.description}
-                        </div>
-                        <div className='info'>
-                            <Link to={`/channel/${video.snippet.channelId}`} className='author'>{video.snippet.channelTitle}</Link>
-                            <span className='date'>{formatDate(video.snippet.publishedAt)}</span>
-                        </div>
-                    </div>
-                </div>
-            ))}
+                ))
+            ) : (
+                <p>No videos available</p>
+            )}
         </>
     )
 }

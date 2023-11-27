@@ -1,19 +1,20 @@
-import { BsTreeFill } from "react-icons/bs"
 import { MdCalendarToday } from "react-icons/md"
 import { BiMoney } from "react-icons/bi"
 import { AiFillGithub } from "react-icons/ai";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { AiOutlineMail } from "react-icons/ai";
+import { CiHeadphones } from "react-icons/ci"
+
 
 
 export const menuText = [
     {
         title: "노래 유튜버 홈",
-        icon: <BsTreeFill />,
+        icon: <CiHeadphones />,
         src: "/"
     },
     {
-        title: "오늘의 노래",
+        title: "오늘의 노래 Pick",
         icon: <MdCalendarToday />,
         src: "/Today"
     },

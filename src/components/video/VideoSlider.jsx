@@ -14,7 +14,7 @@ const Youtuber = ({ name, videos, title }) => {
             <div className="channelvideo__inner">
                 <Swiper
                     spaceBetween={10}
-                    centeredSlides={true}
+                    centeredSlides={false}
                     autoplay={{
                         delay: 2500,
                         disableOnInteraction: false,
