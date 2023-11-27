@@ -1,31 +1,36 @@
-import React, { Suspense, lazy } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Today from './pages/Today'
+import Youtuber from './pages/Youtuber'
+import Not from './pages/Not'
+import Header from './components/section/Header'
 import Main from './components/section/Main'
-
-const Home = lazy(() => import('./pages/Home'))
-const Today = lazy(() => import('./pages/Today'))
-const Youtuber = lazy(() => import('./pages/Youtuber'))
-const Channel = lazy(() => import('./pages/Channel'))
-const Search = lazy(() => import('./pages/Search'))
-const Video = lazy(() => import('./pages/Video'))
-
+import Footer from './components/section/Footer'
+import Search from './pages/Search'
+import Video from './pages/Video'
+import Channel from './pages/Channel'
+import ScrollTo from './utils/scrollTo'
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <Suspense fallback={<Main />}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Today" element={<Today />} />
-          <Route path="/Youtuber" element={<Youtuber />} />
-          <Route path="/channel/:channelId" element={<Channel />} />
-          <Route path="/search/:searchId" element={<Search />} />
-          <Route path="/video/:videoId" element={<Video />} />
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
-  )
+    return (
+        <BrowserRouter>
+            <ScrollTo />
+            <Header />
+            <Main>
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/Today' element={<Today />} />
+                <Route path='/Youtuber' element={<Youtuber />}/>
+                <Route path='/search/:searchId' element={<Search />}/>
+                <Route path='/video/:videoId' element={<Video />}/>
+                <Route path='/channel/:channelId' element={<Channel />} />
+                <Route path='*' element={<Not />} />
+            </Routes>
+            </Main>
+            <Footer />
+        </BrowserRouter>
+    )
 }
 
 export default App

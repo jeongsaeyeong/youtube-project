@@ -52,41 +52,33 @@
 
         li {
 
-            display: flex;
-            justify-self: left;
-            align-items: center;
-
             a {
-                display: flex;
-                align-items: center;
-                padding: 1.3rem 2.8rem 1rem 3rem;
-                border-bottom: 1px solid var(--white);
+                border-bottom: 1px solid var(--maincolor03-100);
                 font-size: 1rem;
+                display: block;
                 line-height: 1;
                 color: var(--white);
+                padding: 1.3rem 2.8rem 1rem 3rem;
+                position: relative;
                 margin-bottom: 5px;
-                width: 100%;
 
                 &:hover {
-                    background-color: var(--white100);
-                    transition: all 0.6s;
+                    background-color: var(--maincolor03-100);
+                    transition: all 0.4s;
                 }
 
                 svg {
                     width: 1.25rem;
                     height: 1.25rem;
-                }
-
-                em {
-                    padding-left: 5px;
-                    padding-bottom: 2px;
+                    position: absolute;
+                    left: 1.25rem;
+                    top: 0.95rem;
                 }
             }
 
             &.active {
                 a {
-                    background-color: var(--white);
-                    color: var(--maincolor01);
+                    background-color: var(--maincolor03-100);
                 }
             }
         }
@@ -100,19 +92,16 @@
                 display: block;
                 line-height: 1;
                 color: var(--white);
-                padding: 1.1rem 2.8rem;
+                padding: 1.1rem 2.8rem 0.8rem 3rem;
                 border-radius: 5px;
                 font-size: 15px;
-                margin-bottom: 3px;
 
                 a {
                     padding-top: 2px;
                 }
 
                 &:hover {
-                    cursor: pointer;
-                    background-color: var(--maincolor04);
-                    color: var(--maincolor01);
+                    background-color: var(--maincolor03-100);
                     transition: all 0.4s;
                 }
 
@@ -122,10 +111,12 @@
                 }
             }
 
-            .active {
-                background-color: var(--maincolor04);
-                color: var(--maincolor01);
+            &.active {
+                a {
+                    background-color: var(--maincolor03-100);
+                }
             }
+
         }
     }
 }

@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: repeat(4, 24%);
     justify-content: space-between;
-    min-height: 100vh;
 
     .video {
         margin-bottom: 50px;
@@ -46,7 +45,7 @@
                 text-underline-position: under;
                 color: var(--black400);
                 transition: color 0.3s;
-
+            
                 &:hover {
                     color: var(--maincolor01);
                 }
@@ -60,28 +59,13 @@
     }
 }
 
-.video__more {
-    font-family: var(--mainfont-revecca);
-    text-align: center;
-
-    button {
-        cursor: pointer;
-        padding: 15px 60px;
-        color: var(--maincolor01);
-        border: 1px solid var(--maincolor01);
-        transition: all 0.6s;
-    }
-
-    button:hover {
-        color: var(--maincolor04);
-        background-color: var(--maincolor01);
-    }
-}
+#videoViewPage {}
 
 .video__view {
 
     .video__play {
         width: 100%;
+        padding-bottom: 56.25%;
         position: relative;
     }
 
@@ -90,7 +74,6 @@
         .video__title {
             font-family: var(--mainfont-revecca);
             padding: 20px 0 10px 0;
-            font-size: 30px;
             border-bottom: 1px solid var(--maincolor01);
         }
 
@@ -103,9 +86,7 @@
         h2 {
             font-weight: 300;
             margin-bottom: 10px;
-            font-size: 25px;
         }
-
         p {
             border: 1px solid var(--maincolor01);
             padding: 10px;
@@ -116,111 +97,40 @@
         margin-top: 10px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: right;
+        justify-content: space-between;
+        margin-bottom: 40px;
 
         .id {
             width: 100%;
             font-weight: 800;
             margin-bottom: 30px;
-            font-size: 20px;
 
             a {
                 border: 1px solid #000;
             }
         }
 
-        .video__desc {
+        .desc {
             width: 100%;
             margin-bottom: 20px;
-            white-space: pre-wrap;
+            white-space: pre-line;
         }
 
         .count {
             margin-top: 30px;
+            width: 100%;
             text-align: right;
-            display: flex;
-            align-items: center;
-
+            
             .view,
             .like,
-            .comment {
-                text-align: center;
-                padding: 1rem 1.2rem;
-                background-color: var(--maincolor01);
-                color: var(--maincolor04);
+            .comment  {
+                padding: 1rem 1.2rem 0.8rem;
+                border: 1px solid var(--maincolor01);
                 margin-right: 10px;
-                border-radius: 5px;
+                border-radius: 30px;
+                position: relative;
+                
             }
         }
-    }
-}
-
-#videos {
-    padding: 20px 40px;
-
-    h2 {
-        padding-bottom: 10px;
-    }
-
-    .channelvideo__inner {
-        .video__thumb {
-            a {
-                display: block;
-                cursor: pointer;
-                width: 100%;
-                padding-bottom: 56.25%;
-                background-size: cover;
-                background-position: center;
-                margin-bottom: 20px;
-            }
-        }
-
-        .video__info {
-            .title {
-                font-size: 16px;
-                @include line-one;
-                margin-bottom: 10px;
-                border-bottom: 1px solid;
-            }
-
-            .desc {
-                @include line(3);
-                margin-bottom: 10px;
-                color: var(--black400);
-                height: 100px;
-            }
-        }
-    }
-}
-
-
-@media (max-width:1200px) {
-    .video__inner {
-        grid-template-columns: repeat(3, 32%);
-    }
-}
-
-@media (max-width:1000px) {
-    .video__inner {
-        grid-template-columns: repeat(2, 48%);
-    }
-}
-
-@media (max-width:800px) {
-    .video__inner {
-        grid-template-columns: repeat(3, 32%);
-    }
-}
-
-@media (max-width:600px) {
-    .video__inner {
-        grid-template-columns: repeat(2, 48%);
-    }
-}
-
-@media (max-width:400px) {
-    .video__inner {
-        justify-content: center;
-        grid-template-columns: repeat(1, 98%);
     }
 }

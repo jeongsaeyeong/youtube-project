@@ -8,10 +8,10 @@ const Sns = () => {
             <ul>
                 {snsText.map((sns, key) => (
                     <li key={key}>
-                        <a
-                            href={sns.src}
-                            target='_blank'
-                            rel='nonopener noreferrer'
+                        <a 
+                        href={sns.src} 
+                        target='_blank' 
+                        rel='nonopener noreferrer'
                         >
                             <span>{sns.icon}</span>
                         </a>

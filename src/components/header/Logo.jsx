@@ -1,11 +1,11 @@
 import React from 'react'
 import { RiFileMusicLine } from "react-icons/ri"
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
-const Logo = ({ toggleMenu }) => {
+const Logo = () => {
     return (
         <h1 className='header__logo'>
-            <Link to='/' onClick={toggleMenu}>
+            <Link to='/'>
                 <em><RiFileMusicLine /></em>
                 <span>Silence<br />Youtube</span>
             </Link>
